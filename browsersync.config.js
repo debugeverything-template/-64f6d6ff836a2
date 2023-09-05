@@ -1,11 +1,12 @@
 module.exports = {
-  files: ['./src/index.html'],
+  files: ['./index.html'],
   server: {
-    baseDir: './src',
+    baseDir: './',
   },
   middleware: [
     function (_req, res, next) {
       res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+      res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
 
       next();
     },
